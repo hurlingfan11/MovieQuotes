@@ -70,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
         final TextView quoteEditText = view.findViewById(R.id.dialog_quote_edittext);
         final TextView movieEditText = view.findViewById(R.id.dialog_movie_edittext);
 
+        builder.setTitle("Add this quote");
+
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -91,5 +93,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        return true;
+    }
 }
