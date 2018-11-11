@@ -1,5 +1,7 @@
 package com.clancy.conor.moviequotes;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -74,6 +76,16 @@ public class MovieQuoteAdapter extends RecyclerView.Adapter<MovieQuoteAdapter.Mo
 
             mQuoteTextView = itemView.findViewById(R.id.itemview_quote);
             mMovieTextView = itemView.findViewById(R.id.itemview_movie);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Context c = v.getContext();
+                    Intent intent = new Intent(c, MovieQuoteActivity.class);
+                    c.startActivity(intent);
+
+                }
+            });
         }
     }
 
